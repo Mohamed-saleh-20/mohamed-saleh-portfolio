@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mohamed Saleh — Full Stack Developer (Flutter &amp; Web)</title>
+  <meta name="description" content="Mohamed Saleh is a full stack developer in Cairo building polished Flutter apps and modern websites. Explore projects, services, and get in touch.">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohamed Saleh — Full Stack Developer">
+  <meta property="og:description" content="Polished Flutter apps and modern websites, built in Cairo.">
+  <meta property="og:image" content="assets/img/reference-sticker.webp">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var preferred = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      root.dataset.theme = saved || preferred;
+      root.classList.add('js');
+    })();
+  </script>
+</head>
+
+<body>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!--==================== HEADER ====================-->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="nav__logo">Mohamed Saleh</a>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#skills" class="nav__link">Skills</a></li>
+          <li><a href="#projects" class="nav__link">Work</a></li>
+          <li><a href="#services" class="nav__link">Services</a></li>
+          <li><a href="#experience" class="nav__link">Experience</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+          <i class="ri-sun-line" aria-hidden="true"></i>
+        </button>
+        <a href="#contact" class="pill pill--sm nav__cta">Contact</a>
+        <button class="icon-btn nav__burger" id="nav-burger" type="button"
+                aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+          <i class="ri-menu-line" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!--==================== HERO ====================-->
+    <section class="hero" id="home">
+      <div class="hero__glow" aria-hidden="true"></div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">Full Stack Developer · Flutter &amp; Web</p>
+
+        <h1 class="hero__title reveal" style="--d:.08s">
+          Apps and websites<br>
+          <span class="grad">people love to use.</span>
+        </h1>
+
+        <p class="lead hero__lead reveal" style="--d:.16s">
+          I'm Mohamed Saleh, a developer in Cairo building polished Flutter apps
+          and modern websites, with a growing passion for data science.
+        </p>
+
+        <div class="hero__cta reveal" style="--d:.24s">
+          <a href="#projects" class="pill">View my work</a>
+          <a href="assets/pdf/Mohamed%20Saleh%20CV.pdf" class="link-arrow" download>
+            Download CV <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <figure class="hero__visual reveal" style="--d:.32s">
+          <div class="hero__frame">
+            <img src="assets/img/reference-sticker.webp" alt="Portrait of Mohamed Saleh" fetchpriority="high">
+          </div>
+          <span class="float-chip float-chip--a"><i class="ri-smartphone-line" aria-hidden="true"></i> Flutter developer</span>
+          <span class="float-chip float-chip--b"><i class="ri-map-pin-line" aria-hidden="true"></i> Cairo, Egypt</span>
+        </figure>
+      </div>
+    </section>
+
+    <!--==================== STATS ====================-->
+    <section class="stats container" aria-label="At a glance">
+      <div class="stat reveal">
+        <span class="stat__num" data-count="5">5</span>
+        <p class="stat__label">Projects delivered</p>
+      </div>
+      <div class="stat reveal" style="--d:.1s">
+        <span class="stat__num" data-count="3">3</span>
+        <p class="stat__label">Platforms: mobile, web, WordPress</p>
+      </div>
+      <div class="stat reveal" style="--d:.2s">
+        <span class="stat__num" data-count="10">10</span>
+        <p class="stat__label">Tools in my stack</p>
+      </div>
+    </section>
+
+    <!--==================== ABOUT ====================-->
+    <section class="section about" id="about">
+      <div class="container container--narrow">
+        <p class="eyebrow reveal">About</p>
+        <p class="about__statement" data-words>
+          I'm a highly motivated and versatile developer with a strong foundation in
+          full stack development and a passion for data science. I care about clean
+          code, clear interfaces, and products that feel effortless to use.
+        </p>
+        <p class="about__meta reveal"><i class="ri-map-pin-line" aria-hidden="true"></i> Based in Cairo, Egypt</p>
+      </div>
+    </section>
+
+    <!--==================== SKILLS ====================-->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2 class="title">The tools I build with.</h2>
+          <p class="lead">From first sketch to shipped product, this is my everyday toolkit.</p>
+        </header>
+
+        <div class="bento">
+          <article class="card bento__mobile reveal">
+            <h3 class="card__title">Mobile</h3>
+            <p class="card__text">Cross-platform apps for iOS and Android.</p>
+            <ul class="tiles">
+              <li class="tile tile--text">Flutter</li>
+              <li class="tile tile--text">Dart</li>
+            </ul>
+          </article>
+
+          <article class="card bento__web reveal" style="--d:.1s">
+            <h3 class="card__title">Web</h3>
+            <p class="card__text">Responsive, fast, and accessible interfaces.</p>
+            <ul class="tiles">
+              <li class="tile"><img src="assets/img/skills-html.svg" alt="" width="24" height="24">HTML</li>
+              <li class="tile"><img src="assets/img/skills-css.svg" alt="" width="24" height="24">CSS</li>
+              <li class="tile"><img src="assets/img/skills-javascript.svg" alt="" width="24" height="24">JavaScript</li>
+              <li class="tile"><img src="assets/img/skills-react.svg" alt="" width="24" height="24">React</li>
+              <li class="tile"><img src="assets/img/skills-sass.svg" alt="" width="24" height="24">Sass</li>
+              <li class="tile"><img src="assets/img/skills-tailwind-css.svg" alt="" width="24" height="24">Tailwind CSS</li>
+            </ul>
+          </article>
+
+          <article class="card bento__tools reveal" style="--d:.15s">
+            <h3 class="card__title">Workflow and design</h3>
+            <p class="card__text">Version control and design tools that keep projects organized.</p>
+            <ul class="tiles">
+              <li class="tile"><img src="assets/img/skills-git.svg" alt="" width="24" height="24">Git</li>
+              <li class="tile"><img src="assets/img/skills-github.svg" alt="" width="24" height="24">GitHub</li>
+              <li class="tile"><img src="assets/img/skills-figma.svg" alt="" width="24" height="24">Figma</li>
+              <li class="tile"><img src="assets/img/skills-photoshop.svg" alt="" width="24" height="24">Photoshop</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== PROJECTS ====================-->
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="title">Things I've built.</h2>
+          <p class="lead">Mobile apps, web platforms, and online stores, each designed to solve a real problem.</p>
+        </header>
+
+        <div class="projects__grid">
+          <!-- Replace each href="#" with the real project link -->
+          <article class="project project--feature reveal">
+            <a href="#" class="project__media" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/project-se7ety.svg" alt="" loading="lazy">
+            </a>
+            <div class="project__body">
+              <p class="project__tag">Mobile app · Flutter</p>
+              <h3 class="project__title">Se7ety</h3>
+              <p class="project__desc">A comprehensive healthcare application connecting patients with doctors.</p>
+              <a href="#" class="link-arrow project__link" target="_blank" rel="noopener">
+                View project <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a href="#" class="project__media" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/project-bookia.svg" alt="" loading="lazy">
+            </a>
+            <div class="project__body">
+              <p class="project__tag">Mobile app · Flutter</p>
+              <h3 class="project__title">Bookia</h3>
+              <p class="project__desc">A mobile app for book lovers to discover, read, and manage their reading lists.</p>
+              <a href="#" class="link-arrow project__link" target="_blank" rel="noopener">
+                View project <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--d:.1s">
+            <a href="#" class="project__media" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/project-shamil.svg" alt="" loading="lazy">
+            </a>
+            <div class="project__body">
+              <p class="project__tag">Web platform · Flutter Web</p>
+              <h3 class="project__title">Shamil Platform</h3>
+              <p class="project__desc">A service-oriented website linking users with various service providers.</p>
+              <a href="#" class="link-arrow project__link" target="_blank" rel="noopener">
+                View project <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <a href="#" class="project__media" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/project-shamiltechnology.svg" alt="" loading="lazy">
+            </a>
+            <div class="project__body">
+              <p class="project__tag">Company website · Flutter Web</p>
+              <h3 class="project__title">ShamilTechnology</h3>
+              <p class="project__desc">The official website for a software house providing modern business solutions.</p>
+              <a href="#" class="link-arrow project__link" target="_blank" rel="noopener">
+                View project <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" style="--d:.1s">
+            <a href="#" class="project__media" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              <img src="assets/img/project-brandzone.svg" alt="" loading="lazy">
+            </a>
+            <div class="project__body">
+              <p class="project__tag">E-commerce · WordPress</p>
+              <h3 class="project__title">Brand Zone</h3>
+              <p class="project__desc">A full-featured online store for digital and smart devices.</p>
+              <a href="#" class="link-arrow project__link" target="_blank" rel="noopener">
+                View project <i class="ri-arrow-right-s-line" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== SERVICES ====================-->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Services</p>
+          <h2 class="title">How I can help.</h2>
+          <p class="lead">End-to-end digital work, from the first idea to a polished launch.</p>
+        </header>
+
+        <div class="services__grid">
+          <article class="card card--hover reveal">
+            <div class="service__icon"><i class="ri-smartphone-line" aria-hidden="true"></i></div>
+            <h3 class="card__title">Mobile app development</h3>
+            <p class="card__text">Cross-platform apps built with Flutter: smooth, native-feeling, and ready for iOS and Android.</p>
+          </article>
+
+          <article class="card card--hover reveal" style="--d:.08s">
+            <div class="service__icon"><i class="ri-code-box-line" aria-hidden="true"></i></div>
+            <h3 class="card__title">Web development</h3>
+            <p class="card__text">Fast, responsive websites and web apps, from Flutter Web platforms to WordPress stores.</p>
+          </article>
+
+          <article class="card card--hover reveal">
+            <div class="service__icon"><i class="ri-pen-nib-line" aria-hidden="true"></i></div>
+            <h3 class="card__title">UI design</h3>
+            <p class="card__text">Interfaces designed in Figma with clear hierarchy, consistent spacing, and attention to detail.</p>
+          </article>
+
+          <article class="card card--hover reveal" style="--d:.08s">
+            <div class="service__icon"><i class="ri-seo-line" aria-hidden="true"></i></div>
+            <h3 class="card__title">SEO for web pages</h3>
+            <p class="card__text">Search-friendly structure, performance, and metadata so the right people can find your site.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!--==================== EXPERIENCE ====================-->
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Experience</p>
+          <h2 class="title">Where I've worked.</h2>
+        </header>
+
+        <ol class="timeline">
+          <li class="timeline__item card reveal">
+            <h3 class="card__title">Se7ety App</h3>
+            <p class="timeline__role">Flutter Developer</p>
+            <p class="card__text">Developed a comprehensive healthcare application connecting patients with doctors.</p>
+          </li>
+          <li class="timeline__item card reveal">
+            <h3 class="card__title">Bookia App</h3>
+            <p class="timeline__role">Flutter Developer</p>
+            <p class="card__text">Created a mobile app for book lovers to discover, read, and manage their reading lists.</p>
+          </li>
+          <li class="timeline__item card reveal">
+            <h3 class="card__title">Shamil Platform</h3>
+            <p class="timeline__role">Flutter Web Developer</p>
+            <p class="card__text">Built a service-oriented website linking users with various service providers.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!--==================== CONTACT ====================-->
+    <section class="section section--alt" id="contact">
+      <div class="container contact__grid">
+        <div class="reveal">
+          <p class="eyebrow">Contact</p>
+          <h2 class="title">Let's build something great.</h2>
+          <p class="lead contact__lead">
+            Have a project in mind or just want to say hello? I don't reply on social
+            networks, so send a message here and I'll answer by email.
+          </p>
+          <div class="contact__links">
+            <a class="contact__link" href="https://github.com/Mohamed-saleh-20" target="_blank" rel="noopener">
+              <i class="ri-github-line" aria-hidden="true"></i> GitHub
+            </a>
+            <a class="contact__link" href="https://www.linkedin.com/in/mohamed-saleh-033309306" target="_blank" rel="noopener">
+              <i class="ri-linkedin-box-line" aria-hidden="true"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <form class="card form reveal" id="contact-form" style="--d:.1s" novalidate>
+          <div class="field">
+            <label for="user_name">Name</label>
+            <input id="user_name" name="user_name" type="text" placeholder="Your full name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="user_email">Email</label>
+            <input id="user_email" name="user_email" type="email" placeholder="name@company.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="user_message">Message</label>
+            <textarea id="user_message" name="user_message" placeholder="Tell me about your project" required></textarea>
+          </div>
+          <button class="pill form__submit" type="submit">Send message</button>
+          <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!--==================== FOOTER ====================-->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__copy">© <span id="year">2025</span> Mohamed Saleh. All rights reserved.</p>
+      <ul class="footer__links">
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+    <i class="ri-arrow-up-line" aria-hidden="true"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
