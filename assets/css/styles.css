@@ -996,3 +996,46 @@ html[data-theme=light] .developer-art {
     transition: none;
   }
 }
+/* 12. Scroll-driven editorial lighting */
+main > .section {
+  position: relative;
+  isolation: isolate;
+}
+main > .section::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at var(--scene-progress, 50%) 46%,
+    color-mix(in srgb, var(--accent) 9%, transparent),
+    transparent 55%
+  );
+  content: "";
+  opacity: .65;
+  pointer-events: none;
+  transition: background-position .2s linear;
+}
+.project {
+  transition: transform .22s linear, border-color .35s, box-shadow .35s;
+}
+.project__media img {
+  transform: translateY(var(--image-shift, 0px))
+    scale(calc(1.015 + (1 - var(--card-focus, 1)) * .06));
+}
+.project--feature .project__media img {
+  transform: translateY(var(--image-shift, 0px))
+    scale(calc(1.035 + (1 - var(--card-focus, 1)) * .06));
+}
+.project--feature:hover .project__media img {
+  transform: translateY(var(--image-shift, 0px))
+    scale(calc(1.065 + (1 - var(--card-focus, 1)) * .06));
+}
+@media (prefers-reduced-motion: reduce) {
+  main > .section::before {
+    background: none;
+    transition: none;
+  }
+  .project {
+    transition: none;
+  }
+}

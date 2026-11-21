@@ -158,6 +158,7 @@ function initScrollStory() {
   const heroVisual = document.querySelector('.hero__visual');
   const heroGlow = document.querySelector('.hero__glow');
   const projects = [...document.querySelectorAll('.project')];
+  const sections = [...document.querySelectorAll('main > .section')];
   let framePending = false;
 
   const updateScrollStory = () => {
@@ -165,6 +166,13 @@ function initScrollStory() {
     const scrollableHeight = root.scrollHeight - window.innerHeight;
     const pageProgress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
     root.style.setProperty('--scroll-progress', `${Math.min(pageProgress, 1) * 100}%`);
+
+    sections.forEach((section) => {
+      const bounds = section.getBoundingClientRect();
+      const travel = Math.max(1, window.innerHeight + bounds.height);
+      const progress = Math.min(1, Math.max(0, (window.innerHeight - bounds.top) / travel));
+      section.style.setProperty('--scene-progress', `${Math.round(progress * 100)}%`);
+    });
 
     if (hero && heroVisual) {
       const heroProgress = Math.min(
@@ -180,10 +188,12 @@ function initScrollStory() {
       const bounds = project.getBoundingClientRect();
       const distanceFromCenter = (bounds.top + bounds.height / 2 - window.innerHeight / 2)
         / window.innerHeight;
-      const imageShift = Math.max(-10, Math.min(10, distanceFromCenter * -10));
-      const cardTilt = Math.max(-2.5, Math.min(2.5, distanceFromCenter * 2.5));
+      const imageShift = Math.max(-18, Math.min(18, distanceFromCenter * -18));
+      const cardTilt = Math.max(-3.5, Math.min(3.5, distanceFromCenter * 3.5));
+      const focus = Math.max(0, 1 - Math.abs(distanceFromCenter) * 0.08);
       project.style.setProperty('--image-shift', `${imageShift}px`);
       project.style.setProperty('--card-tilt', `${cardTilt}deg`);
+      project.style.setProperty('--card-focus', String(focus));
     });
   };
 
