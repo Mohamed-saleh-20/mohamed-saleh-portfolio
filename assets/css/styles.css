@@ -554,23 +554,33 @@ img {
   transform: none;
 }
 /* 07. Responsive and reduced motion */
-@media(max-width:850px) {
+@media (max-width: 980px) {
+  body.menu-open {
+    overflow: hidden;
+  }
   .nav__burger {
     display: grid;
   }
   .nav__menu {
     position: fixed;
     inset: 72px 0 0;
+    z-index: 19;
     background: var(--bg);
+    overflow-y: auto;
+    visibility: hidden;
+    pointer-events: none;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    padding: 28px 24px;
+    padding: 28px 24px max(28px, env(safe-area-inset-bottom));
     transform: translateX(100%);
-    transition: transform .3s;
+    transition: transform .35s cubic-bezier(.2, .75, .25, 1), visibility .35s linear .35s;
   }
   .nav__menu.is-open {
     transform: none;
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
   }
   .nav__list,.nav__list li {
     align-items: stretch;
@@ -589,45 +599,64 @@ img {
     grid-template-columns: repeat(2,1fr);
   }
   .contact__grid {
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 36px;
   }
   .hero {
-    min-height: 660px;
+    min-height: 620px;
+    padding-top: 150px;
   }
   .hero__visual {
     height: 190px;
   }
 }
-@media(max-width:600px) {
+@media (max-width: 640px) {
   .container {
-    width: min(100% - 36px,1120px);
+    width: min(calc(100% - 36px), 1120px);
   }
   .section {
-    padding: 82px 0;
+    padding: 76px 0;
   }
   .hero {
-    padding-top: 145px;
+    padding-top: 132px;
     min-height: auto;
   }
   .hero__title {
-    font-size: clamp(58px,17vw,88px);
+    font-size: clamp(46px, 13.8vw, 76px);
+    letter-spacing: -.075em;
   }
   .hero__visual {
-    margin-top: 50px;
-    height: 150px;
+    width: calc(100% + 24px);
+    max-width: none;
+    margin: 42px -12px 0;
+    height: clamp(145px, 42vw, 210px);
+  }
+  .hero__frame {
+    border-radius: 24px;
+  }
+  .float-chip {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+  .float-chip--a {
+    left: 4px;
+  }
+  .float-chip--b {
+    right: 4px;
   }
   .stats {
     gap: 0;
-    padding-bottom: 48px;
+    padding-bottom: 42px;
   }
   .stat {
-    padding: 15px 5px;
+    padding: 15px 8px;
   }
   .stat__num {
-    font-size: 32px;
+    font-size: clamp(28px, 8vw, 36px);
   }
   .stat__label {
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 1.35;
   }
   .bento,.projects__grid,.contact__grid {
     grid-template-columns: 1fr;
@@ -649,6 +678,93 @@ img {
   }
   .card {
     padding: 24px;
+  }
+  .project__media {
+    min-height: 190px;
+  }
+  .project:not(.project--feature) .project__media {
+    min-height: 180px;
+  }
+  .project__body {
+    padding: 22px;
+  }
+  .project__title {
+    font-size: 28px;
+  }
+  .about__statement {
+    font-size: clamp(28px, 7.4vw, 42px);
+  }
+  .contact__links {
+    flex-wrap: wrap;
+  }
+  .footer__links {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+}
+@media (max-width: 420px) {
+  .container {
+    width: calc(100% - 28px);
+  }
+  .nav__logo {
+    font-size: 14px;
+  }
+  .nav__actions {
+    gap: 6px;
+  }
+  .nav__actions .icon-btn {
+    width: 38px;
+    height: 38px;
+  }
+  .nav__cta {
+    padding: 8px 11px;
+    font-size: 12px;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: min(calc(100% - 56px), 320px);
+  }
+  .stat,
+  .stat:last-child {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 13px 4px;
+    text-align: left;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .stat:last-child {
+    border-bottom: 0;
+  }
+  .stat__label {
+    max-width: 190px;
+    text-align: right;
+  }
+  .hero__cta {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .hero__visual {
+    width: calc(100% + 12px);
+    margin-inline: -6px;
+  }
+  .float-chip--a {
+    left: 0;
+  }
+  .float-chip--b {
+    right: 0;
+  }
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (hover: none) {
+  .pill:hover,
+  .card--hover:hover {
+    transform: none;
   }
 }
 @media(prefers-reduced-motion:reduce) {
