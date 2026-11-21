@@ -188,12 +188,13 @@ function initScrollStory() {
       const bounds = project.getBoundingClientRect();
       const distanceFromCenter = (bounds.top + bounds.height / 2 - window.innerHeight / 2)
         / window.innerHeight;
-      const imageShift = Math.max(-18, Math.min(18, distanceFromCenter * -18));
-      const cardTilt = Math.max(-3.5, Math.min(3.5, distanceFromCenter * 3.5));
-      const focus = Math.max(0, 1 - Math.abs(distanceFromCenter) * 0.08);
+      const imageShift = Math.max(-34, Math.min(34, distanceFromCenter * -34));
+      const cardTilt = Math.max(-8, Math.min(8, distanceFromCenter * 8));
+      const focus = Math.max(0, 1 - Math.abs(distanceFromCenter) * 0.42);
       project.style.setProperty('--image-shift', `${imageShift}px`);
       project.style.setProperty('--card-tilt', `${cardTilt}deg`);
       project.style.setProperty('--card-focus', String(focus));
+      project.style.setProperty('--card-scale', String(0.9 + focus * 0.1));
     });
   };
 
